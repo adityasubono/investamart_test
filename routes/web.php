@@ -27,3 +27,6 @@ Route::get('/profile/','ProfileController@index');
 Route::get('/question/','QuestionController@index');
 Route::post('/question/','QuestionController@store');
 Route::put('/question/{id}','QuestionController@update');
+
+
+Route::get('/answer','AnswerController@index');
