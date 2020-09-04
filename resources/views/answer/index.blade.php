@@ -27,6 +27,7 @@
             left: 13%;
             font-size: 60px;
             text-shadow: 4px 4px 8px #0b2e13;
+            font-style: italic;
         }
         #answer {
             font-family: 'Raleway', sans-serif;
@@ -148,44 +149,6 @@
         });
 
     </script>
-
-
-
-    <div id="tabs">
-        <div>Blah</div>
-        <div>Blah blah</div>
-        <div>Blah blah blah</div>
-    </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-    <script>
-        $('#tabs div').first().attr('class', 'current');
-
-        $('#tabs div').each(function(i) {
-            i = i + 1;
-
-            $(this).attr('id', 'tab-' + i);
-
-            if(i !== $('#tabs div').size()) {
-                $(this).append('<button class="tabPagination" rel="tab-' + (i + 1) + '">Next</button>');
-            }
-            if(i !== 1) {
-                $(this).append('<button class="tabPagination" rel="tab-' + (i - 1) + '">Previous</button>');
-            }
-        });
-
-        $('#tabs div[class!="current"]').hide();
-
-        $('.tabPagination').live('click', function() {
-            $('.current').removeAttr('class');
-            $('#tabs div[class!="current"]').hide();
-            $('#' + $(this).attr('rel')).show();
-        });
-    </script>
-
-
-
-
-
 @endsection
 
 

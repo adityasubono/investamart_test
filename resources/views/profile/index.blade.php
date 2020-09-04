@@ -18,7 +18,18 @@
             nulla pariatur. Excepteur sint occaecat cupidatat non proident,
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-        <a class="btn btn-lg" href="/answer" role="button" id="btn_jumbotron">Mulai Sekarang ></a>
+        <form action="/answer" method="post">
+            @csrf
+            <input type="hidden" value="<?php echo uniqid();?>">
+
+            <button
+                type="submit"
+                class="btn btn-lg"
+                role="button"
+                id="btn_jumbotron">Mulai Sekarang >
+            </button>
+        </form>
+
     </div>
 
 @endsection

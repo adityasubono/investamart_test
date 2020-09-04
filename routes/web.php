@@ -29,4 +29,4 @@ Route::post('/question/','QuestionController@store');
 Route::put('/question/{id}','QuestionController@update');
 
 
-Route::get('/answer','AnswerController@index');
+Route::post('/answer','AnswerController@index');
