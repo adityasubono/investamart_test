@@ -29,7 +29,8 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="../assets/styles/carousel.css" rel="stylesheet">
-
-    <link href="../assets/styles/hero_2.css" rel="stylesheet">
-    <link href="../assets/styles/hero_3.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous">
+    </script>
 </head>

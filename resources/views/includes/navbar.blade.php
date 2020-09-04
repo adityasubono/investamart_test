@@ -6,6 +6,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">Profil Gue</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/question">Create Question</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Artboard
@@ -24,3 +30,5 @@
         </div>
     </nav>
 </header>
+
+

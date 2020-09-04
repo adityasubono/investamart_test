@@ -15,22 +15,22 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../assets/image/slide/1.png" class="d-block w-100" alt="...">
+                <img src="../assets/image/slide/1.png" class="d-block w-100" alt="..." id="slide_image">
             </div>
             <div class="carousel-item">
-                <img src="../assets/image/slide/2.png" class="d-block w-100" alt="...">
+                <img src="../assets/image/slide/2.png" class="d-block w-100" alt="..." id="slide_image">
             </div>
             <div class="carousel-item">
-                <img src="../assets/image/slide/3.png" class="d-block w-100" alt="...">
+                <img src="../assets/image/slide/3.png" class="d-block w-100" alt="..." id="slide_image">
             </div>
             <div class="carousel-item">
-                <img src="../assets/image/slide/4.png" class="d-block w-100" alt="...">
+                <img src="../assets/image/slide/4.png" class="d-block w-100" alt="..." id="slide_image">
             </div>
             <div class="carousel-item">
-                <img src="../assets/image/slide/5.png" class="d-block w-100" alt="...">
+                <img src="../assets/image/slide/5.png" class="d-block w-100" alt="..." id="slide_image">
             </div>
             <div class="carousel-item">
-                <img src="../assets/image/slide/6.png" class="d-block w-100" alt="...">
+                <img src="../assets/image/slide/6.png" class="d-block w-100" alt="..." id="slide_image">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

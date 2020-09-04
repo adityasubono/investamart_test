@@ -1,0 +1,41 @@
+.jumbotron {
+    background-image: url('../image/jumbotron/jb.png');
+    background-size: cover;
+    height: 900px
+}
+#invesnow {
+    position: absolute;
+    top: 50px;
+    left: 40%;
+    width: 180px;
+    height: 70px;
+}
+
+#image_caption{
+    position: absolute;
+    top: 150px;
+    left: 35%;
+    width: 300px;
+    height: 300px;
+}
+
+.lead {
+    width: 300px;
+    position: absolute;
+    top: 500px;
+    left: 35%;
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+
+#btn_jumbotron {
+    position: absolute;
+    top: 800px;
+    left: 40%;
+    background-color: #000000;
+    color: white;
+    font-weight: 700;
+
+}
