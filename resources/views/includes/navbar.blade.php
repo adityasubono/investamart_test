@@ -13,10 +13,13 @@
                     <a class="nav-link" href="/question">Create Question</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">
                         Artboard
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu dropdown-toggle" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/artboard/1">Artboard 1</a>
                         <a class="dropdown-item" href="/artboard/2">Artboard 2</a>
                         <a class="dropdown-item" href="/artboard/3">Artboard 3</a>
@@ -30,5 +33,3 @@
         </div>
     </nav>
 </header>
-
-

@@ -132,18 +132,21 @@
                         </div>
 
                     @endforeach
-                    <div class="cls11">
+                    <?php
+                        $d = $question->count() + 1;
+                        ?>
+                    <div class="cls<?php echo $d ?>">
                         <span id="cross">#</span>
                         <h3 id="question_2">Klik Disini Untuk Melihat <br>Hasilnya</h3>
+                        <input type="hidden" name="user_id" value="{{$user}}">
                         <button type="submit" class="btn btn-success btn-lg" id="btn_submit">SUBMIT</button>
                     </div>
                 </div>
             </form>
 
 
-
-
             <a class="btn btn-secondary float-left m-3" id="prev">Ulangi</a>
+
             <a class="btn btn-success float-right m-3" id="next">Lanjut</a>
         </div>
     </div>

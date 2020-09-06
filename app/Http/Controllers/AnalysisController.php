@@ -50,7 +50,8 @@ class AnalysisController extends Controller
                 Analysis::create($value);
             }
 
-            return redirect('/analysis')->with('success', 'Data Successfully Saved ');
+            return redirect()->action('AnalysisController@show', ['id' => $request->user_id])
+                ->with('success', 'Ini Hasil Analisa Karakter Kamu');
 
         } catch (\Exception $e) {
             return redirect('/analysis')->with('error', 'Data Not Successfully Saved');
@@ -65,7 +66,14 @@ class AnalysisController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = $id;
+        $nilai = DB::select("SELECT analysis.user_id, SUM(opportunist) as a, SUM(yolo) as b, SUM(optimistic) as c,
+                            (SUM(opportunist) +  SUM(yolo) +  SUM(optimistic)) as total 
+                             FROM `analysis` JOIN answers ON analysis.answer_id = answers.id
+                             WHERE  analysis.user_id ='$id'
+                             GROUP BY analysis.user_id");
+
+        return view('analysis.show',compact('nilai','user'));
     }
 
     /**

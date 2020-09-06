@@ -36,3 +36,6 @@ Route::get('/users/{id}','UserController@show');
 
 Route::get('/analysis','AnalysisController@index');
 Route::post('/analysis','AnalysisController@store');
+Route::get('/analysis/{id}','AnalysisController@show');
+
+Route::post('/user/{id}','UserController@store');

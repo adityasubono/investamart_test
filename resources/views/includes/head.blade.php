@@ -7,7 +7,7 @@
     <title>Carousel Template · Bootstrap</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
-
+    <script type="text/javascript" src="../assets/jquery/jquery.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 

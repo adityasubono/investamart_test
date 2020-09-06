@@ -8,6 +8,11 @@
 
 
     <div class="jumbotron">
+        @if (session('success'))
+            <div class="alert alert-success fade show" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <img src="../assets/image/jumbotron/invesnow.png" id="invesnow">
         <img src="../assets/image/jumbotron/caption.png" id="image_caption">
         <p class="lead">Penjelasan tentang apa itu Profil Resiko Gue dan iming2 hadiah.
@@ -26,7 +31,13 @@
 
 
     </div>
-
+    <script type="text/javascript">
+        window.setTimeout(function () {
+            $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 4000);
+    </script>
 @endsection
 
 
