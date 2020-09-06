@@ -93,6 +93,8 @@
 
         {{--            FORM INPUT          --}}
 
+
+
             <h5 class="mt-3">Total Points Opportunitis
                 @foreach($opportunist as $to)
                     <?php
@@ -284,6 +286,13 @@
                 </tbody>
             </table>
         @endforeach
+
+            <h5 class="mt-3">Total Points
+                <?php
+                $count = $t->count() * 20;
+                echo $count;
+                ?>
+            </h5>
     </div>
 
 

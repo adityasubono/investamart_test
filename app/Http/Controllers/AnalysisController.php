@@ -2,25 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Analysis;
 use App\Answer;
 use App\Question;
-use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class AnswerController extends Controller
+class AnalysisController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
+        //
+        $nilai = DB::select("SELECT analysis.user_id, SUM(opportunist) as a, SUM(yolo) as b, SUM(optimistic) as c,
+                            (SUM(opportunist) +  SUM(yolo) +  SUM(optimistic)) as total 
+                             FROM `analysis` JOIN answers ON analysis.answer_id = answers.id GROUP BY analysis.user_id");
 
-        $user = $id;
-        $question = Question::all();
-        $answer = Answer::all();
-        return view('answer.index',compact('question','answer','user'));
+        return view('analysis.index',compact('nilai'));
     }
 
     /**
@@ -36,18 +38,29 @@ class AnswerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        try {
+
+//            dd($request->answer);
+            foreach ($request->answer as $key => $value) {
+                Analysis::create($value);
+            }
+
+            return redirect('/analysis')->with('success', 'Data Successfully Saved ');
+
+        } catch (\Exception $e) {
+            return redirect('/analysis')->with('error', 'Data Not Successfully Saved');
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -58,7 +71,7 @@ class AnswerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -69,8 +82,8 @@ class AnswerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -81,7 +94,7 @@ class AnswerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

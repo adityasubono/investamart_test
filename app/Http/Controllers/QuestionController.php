@@ -18,6 +18,7 @@ class QuestionController extends Controller
     {
         $data_question = Question::all()->sortByDesc('id')->take(1);
         $question = Question::all();
+        $answer = Answer::all();
         $opportunist = DB::select("SELECT SUM(opportunist) as a FROM answers");
         $optimistic = DB::select("SELECT SUM(optimistic) as a FROM answers");
         $yolo = DB::select("SELECT SUM(yolo) as a FROM answers");
@@ -27,7 +28,7 @@ class QuestionController extends Controller
         $data_anwser = DB::select("SELECT * FROM questions join answers ON questions.id = answers.question_id");
 
         return view('question.index', compact('data_question', 'data_anwser','question','opportunist',
-        'optimistic','yolo'));
+        'optimistic','yolo','answer'));
     }
 
     /**

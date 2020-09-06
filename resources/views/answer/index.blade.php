@@ -85,30 +85,61 @@
             text-shadow: 4px 4px 4px #0b2e13;
             font-weight: 600;
         }
+
+        #page{
+            position: absolute;
+            bottom: 60px;
+            left: 47%;
+            color: white;
+            font-weight: 700;
+            text-shadow: 2px 2px 2px #1b1e21;
+        }
     </style>
+
+
+
+
     <img src="../assets/image/jumbotron/invesnow.png" id="invesnow">
     <img src="../assets/image/jumbotron/caption.png" id="caption">
 
     <div class="jumbotron jumbotron-fluid">
+
         <div class="container">
-            <div class="divs">
-                @foreach($question as $a)
-                    <div class="cls{{$loop->iteration}}">
-                        <h3 id="question">{{$loop->iteration}}. {{$a->question}}</h3>
-                        @foreach($a->answer as $t)
-                            <span id="answer">{{$t->answer_option}} </span><input type="radio" name="answer" value="{{$t->answer_option}}">
-                            <span id="answer_1">{{$t->answer}}</span><br>
-                        @endforeach
 
+            @if (session('success'))
+                <div class="alert alert-success fade show" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
 
-                    </div>
-                @endforeach
+            <form action="/analysis" method="post">
+                @csrf
+                <div class="divs">
+                    @foreach($question as $a)
+                        <div class="cls{{$loop->iteration}}">
+                            <?php
+                            $number = $loop->iteration;
+                            ?>
+                            <h3 id="question">{{$loop->iteration}}. {{$a->question}}</h3>
+                            @foreach($a->answer as $t)
+                                <span id="answer">{{$t->answer_option}} </span>
+                                <input type="hidden" name="answer[<?php echo $number?>][user_id]" value="{{$user}}">
+                                <input type="radio" name="answer[<?php echo $number?>][answer_id]" value="{{$t->id}}">
+                                <span id="answer_1">{{$t->answer}}</span><br>
+                            @endforeach
+
+                            <h5 class="text-center" id="page">{{$loop->iteration}} / {{$question->count()}}</h5>
+                        </div>
+
+                    @endforeach
                     <div class="cls11">
                         <span id="cross">#</span>
                         <h3 id="question_2">Klik Disini Untuk Melihat <br>Hasilnya</h3>
                         <button type="submit" class="btn btn-success btn-lg" id="btn_submit">SUBMIT</button>
                     </div>
-            </div>
+                </div>
+            </form>
+
 
 
 
@@ -148,6 +179,14 @@
             });
         });
 
+    </script>
+
+    <script type="text/javascript">
+        window.setTimeout(function () {
+            $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 4000);
     </script>
 @endsection
 

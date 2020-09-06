@@ -29,4 +29,10 @@ Route::post('/question/','QuestionController@store');
 Route::put('/question/{id}','QuestionController@update');
 
 
-Route::post('/answer','AnswerController@index');
+Route::get('/answer/{id}','AnswerController@index');
+
+Route::get('/users/','UserController@index');
+Route::get('/users/{id}','UserController@show');
+
+Route::get('/analysis','AnalysisController@index');
+Route::post('/analysis','AnalysisController@store');

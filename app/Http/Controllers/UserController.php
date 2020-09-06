@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Answer;
-use App\Question;
 use App\User;
 use Illuminate\Http\Request;
 
-class AnswerController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +15,7 @@ class AnswerController extends Controller
     public function index($id)
     {
 
-        $user = $id;
-        $question = Question::all();
-        $answer = Answer::all();
-        return view('answer.index',compact('question','answer','user'));
+
     }
 
     /**
@@ -52,7 +47,20 @@ class AnswerController extends Controller
      */
     public function show($id)
     {
-        //
+        try {
+            User::create([
+                'id' => $id
+            ]);
+
+
+            return redirect()->action('AnswerController@index', ['id' => $id])
+                ->with('success', 'Selamat Datang');
+
+
+        } catch (\Exception $e) {
+            return redirect('/users')->with('error', 'Data Not Successfully Saved');
+        }
+
     }
 
     /**
